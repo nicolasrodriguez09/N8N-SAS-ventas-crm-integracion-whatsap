@@ -21,6 +21,14 @@ Un SaaS multi-negocio: cada tienda (gorras, zapatos, celulares, comida…) tiene
 - **Mensajería**: Telegram para pruebas (gratis), WhatsApp Business API oficial en producción. No usar WhatsApp Web no oficial.
 - **Producción**: VPS Hostinger KVM 2 con Docker Compose (Laravel, MySQL, n8n, Postgres para memoria, Redis para caché/cola), dominio con SSL.
 
+## Alcance del MVP
+
+El MVP es el sistema funcionando de punta a punta, con **Telegram** como canal y fotos en **Cloudinary**. No es una versión recortada.
+
+- Incluye: Etapa 1 (#1–#8), Etapa 2 (#9–#13), Etapa 3 (#14–#20), #21 (Telegram) y #23 (fotos en el chat, por Telegram).
+- Fuera del MVP: #22 WhatsApp Business, #24 memoria en Postgres (en el MVP basta Simple Memory), Etapa 5 (despliegue en VPS) y Etapa 6 (suscripciones y escalado).
+- Aun así, diseña pensando en lo que viene: el código no debe amarrarse a Telegram ni a Cloudinary.
+
 ## Reglas de diseño importantes
 
 - Toda tabla de datos lleva `negocio_id`; un dueño nunca ve datos de otro negocio (usar un global scope).
